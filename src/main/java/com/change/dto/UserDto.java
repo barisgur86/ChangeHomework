@@ -6,5 +6,18 @@ import lombok.Data;
 @Data
 @AllArgsConstructor
 public class UserDto {
-    String name;
+    private String name;
+    private long id;
+
+    public UserDto(String name) {
+        this.name = name;
+    }
+
+    public UserDto() {
+
+    }
+
+    public Long getId() {
+        return this.id;
+    }
 }

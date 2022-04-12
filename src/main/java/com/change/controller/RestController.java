@@ -19,16 +19,16 @@ public class RestController {
     private final UserService userService;
 
     @GetMapping
-    public List<User> getUsers() {
+    public List<UserDto> getUsers() {
         return userService.getUserList();
     }
 
 
     @PostMapping("/create")
-    private long saveUser(@RequestBody User user)
+    private long saveUser(@RequestBody UserDto userDto)
     {
-        userService.saveOrUpdate(user);
-        return user.getId();
+        userService.saveOrUpdate(userDto);
+        return userDto.getId();
     }
 
     @DeleteMapping("/delete/{id}")
@@ -38,9 +38,9 @@ public class RestController {
     }
 
     @PutMapping("/update")
-    private User updateUser(@RequestBody User user)
+    private UserDto updateUser(@RequestBody UserDto userDto)
     {
-        return userService.updateUser(user);
+        return userService.updateUser(userDto);
     }
 
 }

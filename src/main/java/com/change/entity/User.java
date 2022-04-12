@@ -20,6 +20,10 @@ public class User {
     @Column(name="NAME")
     private String name;
 
-    public User(String baris) {
+    public User(String name) {
     }
+
+
+
+
 }
